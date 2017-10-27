@@ -1,0 +1,42 @@
+{
+  "Syria" : {
+    "Admin" : {
+      "Name" : "Admin1"
+    },
+    "customs" : {
+      "eye contact" : "direct eye contact norm. Indrect eye contact seen as rude except when talking with an elder",
+      "greeting" : {
+        "men and women greeting" : "handshake, kiss in usually unacceptable",
+        "men greeting men" : "men shake hands",
+        "women greeting women" : "women shake hands and optional kiss on cheek"
+      }
+    },
+    "health" : {
+      "vaccine" : {
+        "Chickenpox" : "Chickenpox",
+        "DTaP" : "DTaP",
+        "Diphtheria" : "Diphtheria",
+        "Flu" : "Flu",
+        "HPV" : "HPV",
+        "Hepatitis A" : "Hepatitis A",
+        "Hib" : "Hib",
+        "MMR" : "MMR",
+        "Meningococcal" : "Meningococcal",
+        "Pertussis" : "Pertussis",
+        "Pneumococcal" : "Pneumococcal",
+        "Polio" : "Polio",
+        "Rotavirus" : "Rotavirus",
+        "Shingles" : "Shingles",
+        "Tetanus" : "Tetanus"
+      }
+    },
+    "region" : {
+      "region1" : {
+        "address" : "123 Main Street",
+        "phone_number" : "(123)-456-7890",
+        "recipient_name" : "John Smith",
+        "region_name" : "Region1"
+      }
+    }
+  }
+}
