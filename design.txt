@@ -1,0 +1,43 @@
+IRC
+-Refugee and displaced people
+-help refugees survive, recover, and gain stronol of future
+ -healthcare, protect refugee, education, economic wellbeing, and power (how communities govern, get access to legal and manage resources)
+-How provide vital info to staff to track staff in vulnerable situation (security warning and important contact info, mass SMS notification)
+ -Admin component and client component for staff to get custom display of info
+ -English, French, and Arabic
+ -Use ML to learn what other people did in situation, use audio detection, display vital info, cache direction of user and get nearest area
+
+TOPICS
+Group Messaging
+-Admin (regional or country security person) to staff in that area
+ -What message is and which group (country, region, or specific group)
+  -Country -> specific region site -> region site
+ -App has info of:
+  1) Security briefing (country's security context, what dangers, where recommend not go, rules of local customs)
+  2) Emergency Contact cards
+   -Regional sec staff (name and phone #)
+   -Executive staff who needs to notify in case of emergency
+  3) Alerting system
+   -Broadcast SMS of alert if in range
+  4) Please tell me if OK
+   -Need to hit button notify on phone to say safe
+-Health
+ -Vaccination/infectious disease in area before leaving and while in
+ -Current hazard in area
+ -Heat and humidity index
+  -Calc how long survive based on how much resources have (health management)
+ -Ex:
+  Ebola->Notify steps before and after leaving
+
+DESIGN
+Two designs
+1) Admin (Desktop)
+ -Manage resource and staff in area
+ -Sending alerts and managing who is safe or not
+ -Approve, assess, and send out
+2) Staffs (Mobile)
+ -Info of security and health guideline
+ -Track who with
+ -Compliance with rules
+ -Authentication and identification
+ -
