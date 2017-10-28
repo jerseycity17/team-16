@@ -39,6 +39,10 @@ export default class App extends React.Component {
           screen: LocationScreen,
           navigationOptions: {header : null},
         },
+        alert: {
+          screen: AlertScreen,
+          navigationOptions: {header : null},
+        },
       }, {
         lazy : true,
       },

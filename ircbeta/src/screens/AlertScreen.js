@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import { database } from '../firebase/firebase'
 import { database } from '../firebase/firebase';
 import Panel from '../components/Panel';
 import firebase from 'firebase'
@@ -26,6 +27,9 @@ class AlertScreen extends Component {
     ]
   }
   componentDidMount() {
+    // database.ref('/staff').once('value').then((snapshot) => {
+    //   console.log(snapshot)
+    // })
     console.log(this.state.alerts)
     database.ref('/staff').once('value').then((snapshot) => {
       console.log(snapshot)
@@ -57,7 +61,7 @@ class AlertScreen extends Component {
 const styles = StyleSheet.create({
   container : {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center'
   }
