@@ -11,9 +11,10 @@ import action from './src/actions/';
 import {
   AlertScreen,
   HomeScreen,
+  HealthScreen,
   PlaygroundScreen,
   LocationScreen,
-  CustomsScreen
+  CustomsScreen,
 } from './src/screens'
 
 export default class App extends React.Component {
@@ -50,6 +51,10 @@ export default class App extends React.Component {
         },
         customs: {
           screen: CustomsScreen,
+          navigationOptions: {header : null},
+        },
+        health: {
+          screen: HealthScreen,
           navigationOptions: {header : null},
         },
       }, {

@@ -46,7 +46,7 @@ class HomeScreen extends Component {
           <View style={styles.lowerBox}>
             <View style={styles.box3}>
               <TouchableOpacity style={styles.box2}
-                onPress={() => this.props.navigation.navigate('alert')}>
+                onPress={() => this.props.navigation.navigate('health')}>
               <Image
                 source={require('../../assets/graphics/emergency_icon.png')}
                 style={styles.emergency}
