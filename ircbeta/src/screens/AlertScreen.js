@@ -10,10 +10,8 @@ class AlertScreen extends Component {
         this.state = {};
     };
     componentWillMount() {
-        console.log('Componeontwm')
         const alerts = database.ref('/Syria/alerts/');
         alerts.on('value', (snapshot) => {
-            console.log(snapshot.val());
             this.setState({
                 alerts: snapshot.val(),
             });
