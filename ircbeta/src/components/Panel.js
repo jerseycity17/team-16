@@ -19,12 +19,40 @@ class Panel extends Component{
 
         this.state = {       //Step 3
             title       : props.title,
-            expanded    : true
+            expanded    : true,
+            animation   : new Animated.Value()
         };
-    }
-
-    toggle(){
         
+    }
+    
+    _setMaxHeight(event){
+        this.setState({
+            maxHeight   : event.nativeEvent.layout.height
+        });
+    }
+    
+    _setMinHeight(event){
+        this.setState({
+            minHeight   : event.nativeEvent.layout.height
+        });
+    }
+    
+    toggle(){
+         //Step 1
+    let initialValue    = this.state.expanded? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
+    finalValue      = this.state.expanded? this.state.minHeight : this.state.maxHeight + this.state.minHeight;
+
+    this.setState({
+        expanded : !this.state.expanded  //Step 2
+    });
+
+    this.state.animation.setValue(initialValue);  //Step 3
+    Animated.spring(     //Step 4
+    this.state.animation,
+        {
+            toValue: finalValue
+        }
+        ).start();  //Step 5
     }
 
 
@@ -37,8 +65,10 @@ class Panel extends Component{
 
         //Step 5
         return ( 
+<Animated.View 
+            style={[styles.container,{height: this.state.animation}]}>
             <View style={styles.container} >
-                <View style={styles.titleContainer}>
+                <View style={styles.titleContainer} onLayout={this._setMinHeight.bind(this)}>
                     <Text style={styles.title}>{this.state.title}</Text>
                     <TouchableHighlight 
                         style={styles.button} 
@@ -51,11 +81,12 @@ class Panel extends Component{
                     </TouchableHighlight>
                 </View>
                 
-                <View style={styles.body}>
+                <View style={styles.body} onLayout={this._setMaxHeight.bind(this)} >
                     {this.props.children}
                 </View>
 
             </View>
+            </Animated.View>
         );
     }
 }
@@ -63,7 +94,7 @@ class Panel extends Component{
 var styles = StyleSheet.create({
     container   : {
         backgroundColor: '#fff',
-        margin:10,
+        margin: 10,
         overflow:'hidden'
     },
     titleContainer : {
