@@ -29,7 +29,6 @@ class LocationScreen extends Component {
 
 //This fetches from the global store
 const mapStateToProps = (state, ownProps) => {
-    console.log(state)
     const geolocation = state.profile.location;
     return {
         ...ownProps,
