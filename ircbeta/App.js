@@ -54,7 +54,7 @@ export default class App extends React.Component {
           navigationOptions: {header : null},
         },
         health: {
-          screen: HealthScreen,
+          screen: HealthView,
           navigationOptions: {header : null},
         },
         customs: {

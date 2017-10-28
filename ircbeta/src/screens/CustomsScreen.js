@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Panel from '../components/Panel';
 import AlertBar2 from '../components/AlertBar2'
 
@@ -39,4 +39,11 @@ var styles = StyleSheet.create({
     }
 });
 
-export default CustomsScreen
+mapStateToProps = (state, ownProps) => {
+  console.log('Customs Screen mapState', state)
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps)(CustomsScreen)
