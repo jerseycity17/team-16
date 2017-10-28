@@ -20,6 +20,7 @@ const actions = {
     needCheckIn: (dispatch, checkIn) => {
         dispatch({
             type: "NEED_TO_CHECK_IN",
+            payload: checkIn
         })
     }
 };
