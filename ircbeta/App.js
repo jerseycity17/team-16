@@ -9,7 +9,8 @@ import action from './src/actions/';
 
 import {
   AlertScreen,
-  PlaygroundScreen
+  PlaygroundScreen,
+  LocationScreen,
 } from './src/screens'
 
 export default class App extends React.Component {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
         navigator.geolocation.getCurrentPosition((position) => {
             var initialPosition = JSON.stringify(position);
             console.log(position);
-            action.updateGeolocation(store.dispatch, position);
+            action.updateGeolocation(store.dispatch, position.coords);
         }, (error) => {
             alert(error.message);
         }, {
@@ -25,14 +26,14 @@ export default class App extends React.Component {
         });
         this.watchID = navigator.geolocation.watchPosition((position) => {
             var lastPosition = JSON.stringify(position);
-            action.updateGeolocation(store.dispatch, position);
+            action.updateGeolocation(store.dispatch, position.coords);
         });
         console.log(JSON.stringify(this.state));
     };
   render() {
     const MainNavigator = StackNavigator({
         playground: {
-          screen: PlaygroundScreen,
+          screen: LocationScreen,
           navigationOptions: {header : null},
         },
       }, {
