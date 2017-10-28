@@ -2,7 +2,9 @@ import {database} from '../firebase/firebase';
 
 const ProfileReducerState = {
   location: 'default location',
-  checkIn: false,
+  checkIn: {
+    needCheckIn: false
+  },
 }
 
 export default (state = ProfileReducerState, action) => {

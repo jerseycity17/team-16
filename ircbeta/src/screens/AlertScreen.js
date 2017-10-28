@@ -29,7 +29,7 @@ class AlertScreen extends Component {
         <ScrollView>
       {
           this.state.alerts &&
-          Object.keys(this.state.alerts).map((alertId, index) => {
+          Object.keys(this.state.alerts).reverse().map((alertId, index) => {
               const alertItem = this.state.alerts[alertId]
               return (
                 <Panel
