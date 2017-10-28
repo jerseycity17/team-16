@@ -29,7 +29,6 @@ class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.box1}
               onPress={() => this.props.navigation.navigate('alert')}>
-
                 <Text style={styles.textStyle1}>You Are In</Text>
                 <Text style={styles.textStyle1}>Aleppo</Text>
                 <Text style={styles.textStyle1}>Syria</Text>
@@ -55,7 +54,7 @@ class HomeScreen extends Component {
               <Text style={styles.textStyle1}>Health</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.box4} onPress={() => this.props.navigation.navigate('alert')}>
+            <TouchableOpacity style={styles.box4} onPress={() => this.props.navigation.navigate('customs')}>
               <Text style={styles.textStyle1}>Local Customs</Text>
             </TouchableOpacity>
           </View>
