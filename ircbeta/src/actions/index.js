@@ -11,6 +11,12 @@ const actions = {
             payload: countryId,
         })
     },
+    getFirebaseDB: (dispatch, db) => {
+        dispatch({
+            type: "FIREBASE_DB",
+            payload: db,
+        });
+    },
 };
 
 export default actions;

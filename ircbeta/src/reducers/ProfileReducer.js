@@ -1,3 +1,5 @@
+import {database} from '../firebase/firebase';
+
 const ProfileReducerState = {
   location: 'default location',
 }
@@ -18,6 +20,11 @@ export default (state = ProfileReducerState, action) => {
                 ...state.location,
                 country: action.payload,
             },
+        };
+    case 'FIREBASE_DB':
+        return {
+            ...state,
+            firebase: action.payload,
         };
     default:
       return state;
