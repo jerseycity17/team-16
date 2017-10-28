@@ -89,7 +89,8 @@ app.get('/register', function (req, res){
 
 app.post('/logout', async function(req, res) {
     try {
-    await auth.signOut();
+        console.log("text");
+        //await firebase.auth().signOut();
     } catch (e) {
         res.status(500).json('Error on login');
     }
