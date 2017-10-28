@@ -12,7 +12,11 @@ var config = firebase.initializeApp({
 const database = firebase.database();
 const app = express();
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
+app.use(bodyParser.json());
 
 app.use("/", express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public'));
@@ -26,7 +30,8 @@ app.get('*', (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-   
+   alert = req.body;
+   console.log(alert)
 });
 
 app.listen(3000, () => {
