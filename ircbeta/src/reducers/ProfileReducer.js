@@ -5,6 +5,7 @@ const ProfileReducerState = {
 export default (state = ProfileReducerState, action) => {
   switch (action.type) {
     case 'UPDATE_LOCATION':
+        console.log(action);
         return {
             ...state,
             location: action.payload,
