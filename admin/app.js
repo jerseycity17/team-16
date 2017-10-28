@@ -50,7 +50,8 @@ app.post('/send', async (req, res) => {
 app.post('/sendCheckIn', async (req, res) => {
    checkIn = req.body;
    checkIn.needsCheckIn = true;
-   await database.ref('Syria/check_in').push(checkIn);
+   await database.ref('Syria/check_in').set({msg : req.body.msg});
+   await database.ref('Syria/check_in').set({needsCheckIn : true});
    res.sendFile(__dirname +'/public/home.html');
 });
 
