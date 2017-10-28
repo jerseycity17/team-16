@@ -17,6 +17,11 @@ const actions = {
             payload: db,
         });
     },
+    needCheckIn: (dispatch, checkIn) => {
+        dispatch({
+            type: "NEED_TO_CHECK_IN",
+        })
+    }
 };
 
 export default actions;

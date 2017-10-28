@@ -2,41 +2,51 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
 <body>
 
+<div class="form">
 <form action="/send" method="post" onsubmit="this.submit(); this.reset(); return false;">
-  Alert:<br>
-  <input type="text" name="title">
+  <input type="text" placeholder="Alert" name="title">
   <br>
-  Description:<br>
-  <input type="text" name="description">
+  <input type="text" placeHolder="Description" name="description">
   <br><br>
-  Tier:<br>
-  <input type="text" name="tier">
+  <input type="text" placeHolder="Tier" name="tier">
   <br><br>
-  <input type="submit" value="Submit" onclick="updateAlertList()">
+  <input type="submit" value="Submit">
 </form> 
 <form action="/logout" method="post">
     <input type="submit" value="Signout" >
 </form>
 <p>If you click the "Submit" button, the form-data will be sent to all users in your roster</p>
 
-<ul id="alerts">
+    <Text> Alerts: </Text>
+    <ul id="alerts" style="list-style: none">
+        
+    </ul>
 
-</ul>
+</div>
 </body>
 </html>
 
 <script>
+    $(document).ready(()=>{
+        updateAlertList();
+    })
     async function getAlerts()
     {
-        let data = await fetch('alerts').json();
+        let data = await $.ajax({url: "/alerts"});
         return data;
     }
-    function updateAlertList()
+    async function updateAlertList()
     {
-        let alerts = getAlerts();
-        $("#alerts").append($("<li>").append(alerts[0]));
+        let alerts = await getAlerts();
+        console.log(JSON.parse(JSON.stringify(alerts)));
+        console.log(alerts[0]);
+        alerts.forEach(function(element) {
+            $("#alerts").append($("<li>").append(element.title));
+        }, this);
+        
     }
 </script>
