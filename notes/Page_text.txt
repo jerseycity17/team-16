@@ -1,0 +1,47 @@
+Text File
+
+//Landing Page
+
+ALERT
+
+Displaying for
+
+EMERGENCY CONTACT
+
+HEALTH
+
+LOCAL CUSTOMS
+
+//Customs Page
+
+LOCAL CUSTOMS for
+
+As a traveler, please be aware of local etiquette and the regional customs listed below:
+
+Social Interaction
+Greetings
+Men
+Women
+Food
+
+//Emergency Contact Page
+
+EMERGENCY CONTACTS
+
+For emergencies, call in the following order:
+
+In case of medical emergencies, call ISOS:
+
+Contact one of the following, in this order, immediately after ISOS
+
+//Health
+
+Vaccinations
+Outbreaks/Diseases
+Common Illnesses
+Weather Hazards
+
+//Location
+
+
+//Alert Page

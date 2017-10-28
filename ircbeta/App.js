@@ -1,20 +1,55 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-import store from './src/store/configureStore';
 import { StackNavigator } from 'react-navigation';
+// import { country } from 'which-country';
+const wc = require('which-country');
+
+import store from './src/store/configureStore';
+import action from './src/actions/';
 
 import {
   AlertScreen,
   PlaygroundScreen,
-  HomeScreen
+  HomeScreen,
+  LocationScreen,
+  CustomsScreen
 } from './src/screens'
 
 export default class App extends React.Component {
+    componentDidMount() {
+        navigator.geolocation.getCurrentPosition((position) => {
+            var initialPosition = JSON.stringify(position);
+            console.log(position);
+            action.updateGeolocation(store.dispatch, position.coords);
+            action.updateCountryId(store.dispatch, wc([position.coords.longitude, position.coords.latitude]));
+        }, (error) => {
+            alert(error.message);
+        }, {
+            enableHighAccuracy: true, timeout: 20000, maximumAge: 1000
+        });
+        this.watchID = navigator.geolocation.watchPosition((position) => {
+            var lastPosition = JSON.stringify(position);
+            action.updateGeolocation(store.dispatch, position.coords);
+        });
+        console.log(JSON.stringify(this.state));
+    };
   render() {
     const MainNavigator = StackNavigator({
         home: {
           screen: HomeScreen,
+          navigationOptions: {header : null},
+        }
+        location: {
+          screen: LocationScreen,
+          navigationOptions: {header : null},
+        },
+        alert: {
+          screen: AlertScreen,
+          navigationOptions: {header : null},
+        },
+        customs: {
+          screen: CustomsScreen,
           navigationOptions: {header : null},
         },
       }, {
