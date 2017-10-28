@@ -15,7 +15,7 @@
   Tier:<br>
   <input type="text" name="tier">
   <br><br>
-  <input type="submit" value="Submit" onclick="updateAlertList()">
+  <input type="submit" value="Submit">
 </form> 
 <form action="/logout" method="post">
     <input type="submit" value="Signout" >
@@ -29,14 +29,22 @@
 </html>
 
 <script>
+    $(document).ready(()=>{
+        updateAlertList();
+    })
     async function getAlerts()
     {
-        let data = await fetch('alerts').json();
+        let data = await $.ajax({url: "/alerts"});
         return data;
     }
-    function updateAlertList()
+    async function updateAlertList()
     {
-        let alerts = getAlerts();
-        $("#alerts").append($("<li>").append(alerts[0]));
+        let alerts = await getAlerts();
+        console.log(JSON.parse(JSON.stringify(alerts)));
+        console.log(alerts[0]);
+        alerts.forEach(function(element) {
+            $("#alerts").append($("<li>").append(element.title));
+        }, this);
+        
     }
 </script>

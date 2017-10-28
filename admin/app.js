@@ -44,18 +44,27 @@ app.get('/', (req, res) => {
 app.post('/send', async (req, res) => {
    alert = req.body;
    await database.ref('Syria/alerts/').push(alert);
+   console.log("AFTER ADDING TO DB");
+   res.sendFile(__dirname +'/public/home.html');
 });
-/*database.ref('/Syria/emergency').once('value').then((emergency_contact) => {
-            emergency_contact = emergency_contact.val();
-            let emergency = [];
-            Object.keys(emergency_contact).forEach((contact_field) => {
-                let contact_list = Object.keys(emergency_contact[contact_field]).map((contact_item) => {
-                    return contact_item
-                });
-            });*/
+
+/*var query = firebase.database().ref("users").orderByKey();
+query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var key = childSnapshot.key; // "ada"
+
+      // Cancel enumeration
+      return true;
+  });
+});*/
 app.get('/alerts', async (req, res) => {
-    var alerts = await database.ref("alerts").once("value");
-    console.log(alerts);
+    var alertsDatasnapshot = await database.ref("Syria/alerts").orderByKey().once("value");
+    alerts = []; 
+    
+    alertsDatasnapshot.forEach(function(childSnapshot) {
+        alerts.push(childSnapshot.val());
+    });
     res.json(alerts);
     
 })
