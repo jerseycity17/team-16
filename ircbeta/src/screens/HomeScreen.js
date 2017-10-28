@@ -20,7 +20,7 @@ class HomeScreen extends Component {
     return (
       <View style={{ flex: 1 }}>
         <CheckIn
-          visible={this.props.checkIn.needCheckIn} 
+          visible={this.props.checkIn.needCheckIn}
           disc={this.props.checkIn.MSG}
         />
         <View style={styles.container}>
@@ -75,7 +75,7 @@ class HomeScreen extends Component {
 
 //This fetches from the global store
 const mapStateToProps = (state) => {
-  console.log('CHECK IN OBJECT',state.profile.checkIn)
+  // console.log('CHECK IN OBJECT',state.profile.checkIn)
   return {
     checkIn: state.profile.checkIn
   }

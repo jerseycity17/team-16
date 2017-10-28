@@ -65,7 +65,7 @@ const styles = {
 }
 
 const mapStateToProps = state => {
-  // console.log(state)
+  console.log('health')
   return {
     healthList: state.profile.firebase.health
   }
