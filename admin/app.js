@@ -126,7 +126,7 @@ const client = new twilio("ACabbc2b33b44f99aa5dbd3602099bd85e", "2bac59072967bb0
 const twilioNumber = '+13478518941';
 
 let firstTime = true;
-
+let mostRecentIndex = null;
 database
 .ref('/Syria/alerts/')
 .on('value', snapshot => {
@@ -138,7 +138,11 @@ database
      const alertList = snapshot.val();
      console.log(alertList)
      const alertListKey = Object.keys(alertList);
-     const most_recent_alert = alertList[alertListKey[alertListKey.length - 1]];
+     if (mostRecentIndex == alertListKey[alertListKey.length - 1]) {
+         return;
+     }
+     mostRecentIndex = alertListKey[alertListKey.length - 1];
+     const most_recent_alert = alertList[mostRecentIndex];
      const title       = most_recent_alert.title
      const description = most_recent_alert.description
      const textMessage = {
