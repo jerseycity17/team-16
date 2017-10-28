@@ -1,28 +1,53 @@
 {
   "Syria" : {
-    "staff" : {
-        "1": {
-            "id": 1,
-            "name": "John Doe",
-            "region": "region1",
-            "phone_number": "123-456-7890"
-        },
-        "2": {
-            "id": 2,
-            "name": "John Smith",
-            "region": "region2",
-            "phone_number": "456-789-0123"
-        }
-    },
     "Admin" : {
       "name" : "Admin1"
     },
+    "alerts" : [ {
+      "description" : "Please avoid walking near US Embassy. Car explosion!",
+      "tier" : 5,
+      "title" : "Explosion near embassy"
+    }, {
+      "desciption" : "Beware of military vehicles driving on roads. Interrogating anyone walking on streets.",
+      "tier" : 3,
+      "title" : "Syrian Military Curfew"
+    } ],
     "customs" : {
       "eye contact" : "direct eye contact norm. Indrect eye contact seen as rude except when talking with an elder",
       "greeting" : {
         "men and women greeting" : "handshake, kiss in usually unacceptable",
         "men greeting men" : "men shake hands",
         "women greeting women" : "women shake hands and optional kiss on cheek"
+      }
+    },
+    "emergency" : {
+      "1" : {
+        "cell_phone" : "646-262-3444",
+        "name" : "Yves Nommay",
+        "position" : "Dir. International Safety & Security"
+      },
+      "RSSAs" : {
+        "RSSA1" : {
+          "cell_number" : "+1 646-856-7686",
+          "name" : "Barry Steyn, Asia"
+        }
+      },
+      "medical" : {
+        "ISOS-1" : {
+          "name" : "Philadelphia Alarm Center",
+          "phone_number" : "+1-215-942-8226"
+        },
+        "after-ISOS" : {
+          "person1" : {
+            "name" : "Brian Johnson, HR",
+            "phone_1" : "+1 212-551-2934",
+            "phone_2" : "+1 603-490-7097"
+          },
+          "person2" : {
+            "name" : "Ciaran Donnelly, IPD",
+            "phone_1" : "+1 212-551-0981"
+          }
+        }
       }
     },
     "health" : {
@@ -51,6 +76,17 @@
         "recipient_name" : "John Smith",
         "region_name" : "Region1"
       }
-    }
+    },
+    "staff" : [ null, {
+      "id" : 1,
+      "name" : "John Doe",
+      "phone_number" : "123-456-7890",
+      "region" : "region1"
+    }, {
+      "id" : 2,
+      "name" : "John Smith",
+      "phone_number" : "456-789-0123",
+      "region" : "region2"
+    } ]
   }
 }

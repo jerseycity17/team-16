@@ -10,7 +10,7 @@ class HealthScreen extends Component {
     };
     componentWillMount() {
         // Grab list of emergency contct from database
-        database.ref('/Syria/health').once('value').then((snapshot) => {
+        database.ref('/Syria/health').once('value').then((snapshot) => {=======
             console.log(snapshot.val().vaccine);
             this.setState({
                 vaccines: snapshot.val().vaccine,
@@ -18,7 +18,6 @@ class HealthScreen extends Component {
         });
     };
     render() {
-        console.log(this.state.vaccines);
         return (
             <View style={styles.container}>
                 <Text>
