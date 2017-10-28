@@ -12,6 +12,7 @@ import {
   AlertScreen,
   HomeScreen,
   PlaygroundScreen,
+  HomeScreen,
   LocationScreen,
   CustomsScreen
 } from './src/screens'
@@ -36,12 +37,20 @@ export default class App extends React.Component {
     };
   render() {
     const MainNavigator = StackNavigator({
-        playground: {
+        home: {
           screen: HomeScreen,
+          navigationOptions: {header : null},
+        },
+        location: {
+          screen: LocationScreen,
           navigationOptions: {header : null},
         },
         alert: {
           screen: AlertScreen,
+          navigationOptions: {header : null},
+        },
+        customs: {
+          screen: CustomsScreen,
           navigationOptions: {header : null},
         },
       }, {
