@@ -5,15 +5,16 @@ import store from './src/store/configureStore';
 import { StackNavigator } from 'react-navigation';
 
 import {
-  AlertScreen
+  AlertScreen,
+  PlaygroundScreen
 } from './src/screens'
 
 export default class App extends React.Component {
   render() {
     const MainNavigator = StackNavigator({
-        alert: {
-          screen: AlertScreen,
-          navigationOptions: {header : null}
+        playground: {
+          screen: PlaygroundScreen,
+          navigationOptions: {header : null},
         },
       }, {
         lazy : true,
