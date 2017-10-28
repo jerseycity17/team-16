@@ -15,21 +15,11 @@ class CustomsScreen extends Component {
     render() {
         return (
             <ScrollView style={styles.container}>
-                <Panel title="Social Interaction">
-                    <Text>Dummy text</Text>
-                </Panel>
-                <Panel title="Greetings">
-                    <Text>Dummy text</Text>
-                </Panel>
-                <Panel title="Men">
-                    <Text>Dummy text</Text>
-                </Panel>
-                <Panel title="Woman">
-                    <Text>Dummy text</Text>
-                </Panel>
-                <Panel title="Food">
-                    <Text>Dummy text</Text>
-                </Panel>
+                <Panel title="Social Interaction" description="Description here" />
+                <Panel title="Greetings" description="Description here" />
+                <Panel title="Men" description="Description here" />
+                <Panel title="Woman" description="Description here" />
+                <Panel title="Food" description="Description here" />
             </ScrollView>
         )
     }
