@@ -9,8 +9,8 @@ class PlaygroundScreen extends Component {
   }
 
   componentDidMount() {
-    database.ref('/').once('value').then((snapshot) => {
-      console.log(snapshot)
+    database.ref('/staff').once('value').then((snapshot) => {
+      console.log('firebase data ',snapshot)
     })
   }
 
