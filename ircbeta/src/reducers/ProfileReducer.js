@@ -1,6 +1,11 @@
+import {database} from '../firebase/firebase';
+
 const ProfileReducerState = {
   location: 'default location',
 }
+database.ref('/').once("value").then((snapshot) => {
+   ProfileReducerState.firebase = snapshot.val();
+});
 
 export default (state = ProfileReducerState, action) => {
   switch (action.type) {
