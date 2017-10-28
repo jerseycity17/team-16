@@ -11,6 +11,7 @@ import action from './src/actions/';
 import {
   AlertScreen,
   HomeScreen,
+  HealthScreen,
   PlaygroundScreen,
   LocationScreen,
   CustomsScreen,
@@ -54,6 +55,10 @@ export default class App extends React.Component {
         },
         customs: {
           screen: CustomsScreen,
+          navigationOptions: {header : null},
+        },
+        health: {
+          screen: HealthScreen,
           navigationOptions: {header : null},
         },
       }, {
