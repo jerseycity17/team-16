@@ -10,6 +10,7 @@ import action from './src/actions/';
 
 import {
   AlertScreen,
+  HomeScreen,
   PlaygroundScreen,
   HomeScreen,
   LocationScreen,
