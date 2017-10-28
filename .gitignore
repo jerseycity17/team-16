@@ -2,4 +2,14 @@
 **node_modules/
 **yarn.lock
 **package-lock.json
+
+# React
+ircbeta/src/screens/PlaygroundScreen.js
+
+node_modules/**/*
+.expo/*
+npm-debug.*
+
+# Misc
 **.DS_Store
+IRC/

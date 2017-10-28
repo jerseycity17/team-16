@@ -1,7 +1,21 @@
 {
   "Syria" : {
+    "staff" : {
+        "1": {
+            "id": 1,
+            "name": "John Doe",
+            "region": "region1",
+            "phone_number": "123-456-7890"
+        },
+        "2": {
+            "id": 2,
+            "name": "John Smith",
+            "region": "region2",
+            "phone_number": "456-789-0123"
+        }
+    },
     "Admin" : {
-      "Name" : "Admin1"
+      "name" : "Admin1"
     },
     "customs" : {
       "eye contact" : "direct eye contact norm. Indrect eye contact seen as rude except when talking with an elder",
