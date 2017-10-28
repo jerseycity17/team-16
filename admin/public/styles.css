@@ -69,6 +69,14 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+#alerts{
+    background-color:lightyellow;
+    text-align: center;
+
+}
+
+
+
 body {
   background: #FCC513; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #FCC513, #FCA513);
