@@ -20,7 +20,7 @@ export default class App extends React.Component {
             var initialPosition = JSON.stringify(position);
             console.log(position);
             action.updateGeolocation(store.dispatch, position.coords);
-            console.log(wc([position.coords.longitude, position.coords.latitude]))
+            action.updateCountryId(store.dispatch, wc([position.coords.longitude, position.coords.latitude]));
         }, (error) => {
             alert(error.message);
         }, {
