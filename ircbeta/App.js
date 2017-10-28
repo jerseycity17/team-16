@@ -22,6 +22,14 @@ import {
 import FrontView from './src/screens/FrontView.js'
 import HealthView from './src/screens/HealthView.js'
 
+const check_in = database.ref('/Syria/check_in');
+check_in.on('value', (snapshot) => {
+    console.log(snapshot.val());
+    if (snapshot.val()) {
+        action.needCheckIn(store.dispatch, snapshot.val());
+    }
+});
+
 export default class App extends React.Component {
     componentDidMount() {
         navigator.geolocation.getCurrentPosition((position) => {
