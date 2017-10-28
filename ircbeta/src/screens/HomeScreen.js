@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { database } from '../firebase/firebase'
 
-class AlertScreen extends Component {
+class HomeScreen extends Component {
   componentDidMount() {
-    // database.ref('/staff').once('value').then((snapshot) => {
-    //   console.log(snapshot)
-    // })
+    database.ref('/staff').once('value').then((snapshot) => {
+      console.log(snapshot)
+    })
   }
 
   render() {
@@ -22,7 +22,7 @@ class AlertScreen extends Component {
 const styles = StyleSheet.create({
   container : {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center'
   }
@@ -34,4 +34,4 @@ const mapStateToProps = (state) => {
   return { }
 }
 
-export default connect(mapStateToProps)(AlertScreen);
+export default connect(mapStateToProps)(HomeScreen);
