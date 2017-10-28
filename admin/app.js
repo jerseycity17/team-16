@@ -29,8 +29,9 @@ app.get('*', (req, res) => {
     res.sendStatus(404);
 });
 
-app.post('/send', (req, res) => {
+app.post('/send', async (req, res) => {
    alert = req.body;
+   await database.ref('Syria/alerts/').push(alert);
    console.log(alert)
 });
 
