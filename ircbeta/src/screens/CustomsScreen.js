@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { connect} from 'react-redux'
-import Panel from './components/Panel';
+import Panel from '../components/Panel';
 
 class CustomsScreen extends Component {
     componentWillMount() {
@@ -13,25 +13,25 @@ class CustomsScreen extends Component {
     }
 
     render() {
-        return {
+        return (
             <ScrollView style={styles.container}>
                 <Panel title="Social Interaction">
-                    <Text>Dummy text</text>
+                    <Text>Dummy text</Text>
                 </Panel>
                 <Panel title="Greetings">
-                    <Text>Dummy text</text>
+                    <Text>Dummy text</Text>
                 </Panel>
                 <Panel title="Men">
-                    <Text>Dummy text</text>
+                    <Text>Dummy text</Text>
                 </Panel>
                 <Panel title="Woman">
-                    <Text>Dummy text</text>
+                    <Text>Dummy text</Text>
                 </Panel>
                 <Panel title="Food">
-                    <Text>Dummy text</text>
+                    <Text>Dummy text</Text>
                 </Panel>
             </ScrollView>
-        }
+        )
     }
 }
 
@@ -42,3 +42,5 @@ var styles = StyleSheet.create({
         paddingTop : 30
     }
 });
+
+export default CustomsScreen

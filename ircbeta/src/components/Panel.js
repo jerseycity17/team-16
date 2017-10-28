@@ -1,12 +1,20 @@
-import React,{Component,StyleSheet,Text,View,Image,TouchableHighlight,Animated} from 'react-native'; //Step 1
+import React, { Component } from 'react'
+import { 
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    TouchableHighlight,
+    Animated
+} from 'react-native'; //Step 1
 
 class Panel extends Component{
     constructor(props){
-        super(props);
+        super(props)
 
         this.icons = {     //Step 2
-            'up'    : require('./images/Arrowhead-01-128.png'),
-            'down'  : require('./images/Arrowhead-Down-01-128.png')
+            'up'    : require('../../assets/Arrowhead-01-128-1.png'),
+            'down'  : require('../../assets/Arrowhead-Down-01-128-1.png')
         };
 
         this.state = {       //Step 3
