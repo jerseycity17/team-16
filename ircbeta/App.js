@@ -12,7 +12,6 @@ import {
   AlertScreen,
   HomeScreen,
   PlaygroundScreen,
-  HomeScreen,
   LocationScreen,
   CustomsScreen
 } from './src/screens'
