@@ -42,23 +42,23 @@ export default class App extends React.Component {
   render() {
     const MainNavigator = StackNavigator({
         home: {
-          screen: ContactScreen,
+          screen: HomeScreen,
           navigationOptions: {header : null},
         },
         location: {
           screen: LocationScreen,
           navigationOptions: {header : null},
         },
-        alert: {
-          screen: AlertScreen,
+        health: {
+          screen: HealthScreen,
           navigationOptions: {header : null},
         },
         customs: {
           screen: CustomsScreen,
           navigationOptions: {header : null},
         },
-        health: {
-          screen: HealthScreen,
+        contacts: {
+          screen: ContactScreen,
           navigationOptions: {header : null},
         },
       }, {

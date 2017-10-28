@@ -6,7 +6,7 @@ class AlertBar2 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.backStyle}>
+        <TouchableOpacity style={styles.backStyle} onPress={this.props.onPress}>
           <Icon
             name="chevron-left"
             reverse

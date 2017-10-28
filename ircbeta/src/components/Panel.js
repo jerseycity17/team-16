@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { 
+import {
     StyleSheet,
     Text,
     View,
@@ -22,21 +22,21 @@ class Panel extends Component{
             expanded    : true,
             animation   : new Animated.Value()
         };
-        
+
     }
-    
+
     _setMaxHeight(event){
         this.setState({
             maxHeight   : event.nativeEvent.layout.height
         });
     }
-    
+
     _setMinHeight(event){
         this.setState({
             minHeight   : event.nativeEvent.layout.height
         });
     }
-    
+
     toggle(){
          //Step 1
     let initialValue    = this.state.expanded? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
@@ -64,14 +64,14 @@ class Panel extends Component{
         }
 
         //Step 5
-        return ( 
-<Animated.View 
+        return (
+<Animated.View
             style={[styles.container,{height: this.state.animation}]}>
             <View style={styles.container} >
                 <View style={styles.titleContainer} onLayout={this._setMinHeight.bind(this)}>
                     <Text style={styles.title}>{this.props.title}</Text>
-                    <TouchableHighlight 
-                        style={styles.button} 
+                    <TouchableHighlight
+                        style={styles.button}
                         onPress={this.toggle.bind(this)}
                         underlayColor="#f1f1f1">
                         <Image
@@ -80,7 +80,7 @@ class Panel extends Component{
                         ></Image>
                     </TouchableHighlight>
                 </View>
-                
+
                 <View style={styles.body} onLayout={this._setMaxHeight.bind(this)} >
                     <Text>{this.props.description}</Text>
                 </View>
@@ -93,7 +93,7 @@ class Panel extends Component{
 
 var styles = StyleSheet.create({
     container   : {
-        backgroundColor: '#fff',
+        backgroundColor: '#fdc513',
         margin: 10,
         overflow:'hidden'
     },

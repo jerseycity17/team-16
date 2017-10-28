@@ -59,9 +59,10 @@ class ContactScreen extends Component {
     ]
   }
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
-        <AlertBar2 />
+        <AlertBar2 onPress={() => this.props.navigation.goBack()}/>
         <View style={styles.innerContainerCon}>
           <View style={styles.yellowCard1}>
             <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center'}}>Emergency Contacts</Text>

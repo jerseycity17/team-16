@@ -9,6 +9,7 @@ import IRC from '../components/IRC'
 
 class HomeScreen extends Component {
   componentWillMount() {
+    console.log(this.props)
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class HomeScreen extends Component {
           <View style={styles.upperBox}>
             <TouchableOpacity
               style={styles.box1}
-              onPress={() => this.props.navigation.navigate('alert')}>
+              onPress={() => {}}>
               <Image
                 source={require('../../assets/graphics/country.png')}
                 style={styles.planet}
@@ -35,7 +36,7 @@ class HomeScreen extends Component {
                 <Text style={styles.textStyle1}>Syria</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.box2}
-              onPress={() => this.props.navigation.navigate('alert')}>
+              onPress={() => this.props.navigation.navigate('contacts')}>
               <Image
                 source={require('../../assets/graphics/alert.png')}
                 style={styles.emergency}
