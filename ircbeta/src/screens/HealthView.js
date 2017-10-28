@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native'
+import { View, Text, ListView } from 'react-native'
 import AlertBar2 from '../components/AlertBar2';
 import HealthHeader from '../components/HealthHeader';
 import { List, ListItem } from 'react-native-elements'
+import { connect } from 'react-redux'
 
 class HealthView extends Component {
-  renderRow (rowData, sectionID) {
+  componentWillMount() {
+    console.log('Health view props', this.props)
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    })
+
+    this.dataSource = ds.cloneWithRows(this.props.healthList.vaccine);
+  }
+
+  renderRow(element) {
+    console.log(element)
     return (
       <ListItem
-        roundAvatar
-        key={sectionID}
-        title={rowData.name}
-        subtitle={rowData.subtitle}
-        avatar={{uri:rowData.avatar_url}}
+        title={element}
       />
     )
   }
@@ -20,14 +27,16 @@ class HealthView extends Component {
   render() {
     return (
       <View style={styles.healthContainer}>
-        <AlertBar2 onPress={() => this.props.navigation.goBack()} />
+        <AlertBar2 onPress={() => this.props.navigation.goBack()} onPress2={() => this.props.navigation.navigate('alert')} />
         <HealthHeader />
+        <View style={{ flex: 9, backgroundColor: '#d3d3d3' }}>
         <List>
           <ListView
             renderRow={this.renderRow}
-            dataSource={this.state.dataSource}
+            dataSource={this.dataSource}
           />
         </List>
+        </View>
       </View>
     )
   }
@@ -55,4 +64,10 @@ const styles = {
   }
 }
 
-export default HealthView
+const mapStateToProps = state => {
+  // console.log(state)
+  return {
+    healthList: state.profile.firebase.health
+  }
+}
+export default connect(mapStateToProps)(HealthView)

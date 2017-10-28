@@ -6,23 +6,20 @@ import NavBar from '../components/NavBar'
 import { Icon } from 'react-native-elements';
 import AlertBar from '../components/AlertBar';
 import IRC from '../components/IRC'
+import Communications from 'react-native-communications';
 
 class HomeScreen extends Component {
   componentWillMount() {
-    console.log(this.props)
   }
 
   componentDidMount() {
-    // console.log(this.props)
-    // database.ref('/staff').once('value').th en((snapshot) => {
-    //   console.log('firebase data ',snapshot)
-    // })
+    Communications.phonecall('0123456789', true)}
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <AlertBar />
+        <AlertBar onPress2={() => this.props.navigation.navigate('alert')} />
         <IRC />
         <View style={{ flex: 10 }}>
           <View style={styles.upperBox}>

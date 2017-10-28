@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
+import { connect } from 'react-redux'
 import AlertBar2 from '../components/AlertBar2'
 import ContactComponent from '../components/ContactComponent'
 import IsosContact from '../components/IsosContact'
@@ -58,12 +59,12 @@ class ContactScreen extends Component {
       }
     ]
   }
-  
+
   render() {
     console.log(this.props)
     return (
       <View style={styles.container}>
-        <AlertBar2 onPress={() => this.props.navigation.goBack()}/>
+        <AlertBar2 onPress={() => this.props.navigation.goBack()} onPress2={() => this.props.navigation.navigate('alert')} />
         <View style={styles.innerContainerCon}>
           <View style={styles.yellowCard1}>
             <Text style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center'}}>Emergency Contacts</Text>
@@ -169,4 +170,9 @@ const styles = {
   }
 }
 
-export default ContactScreen
+const mapStateToProps = state => {
+  console.log('mapStateToProps contact',state.profile.database)
+  return {}
+}
+
+export default connect(mapStateToProps)(ContactScreen)

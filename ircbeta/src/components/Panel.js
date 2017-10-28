@@ -66,8 +66,11 @@ class Panel extends Component{
         //Step 5
         return (
 <Animated.View
-            style={[styles.container,{height: this.state.animation}]}>
-            <View style={styles.container} >
+            style={[styles.container,{height: this.state.animation, backgroundColor: this.props.backgroundColor ? this.props.backgroundColor : '#fdc513' }]}>
+            <View style={[styles.container, {
+              backgroundColor: this.props.backgroundColor ? this.props.backgroundColor : '#fdc513' }]}
+
+              >
                 <View style={styles.titleContainer} onLayout={this._setMinHeight.bind(this)}>
                     <Text style={styles.title}>{this.props.title}</Text>
                     <TouchableHighlight

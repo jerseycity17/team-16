@@ -7,7 +7,7 @@ const wc = require('which-country');
 
 import store from './src/store/configureStore';
 import action from './src/actions/';
-import {database} from './firebase/firebase';
+import {database} from './src/firebase/firebase';
 
 import {
   AlertScreen,
@@ -23,7 +23,7 @@ import FrontView from './src/screens/FrontView.js'
 import HealthView from './src/screens/HealthView.js'
 
 export default class App extends React.Component {
-    componentDidMount() {
+    async componentDidMount() {
         navigator.geolocation.getCurrentPosition((position) => {
             var initialPosition = JSON.stringify(position);
             console.log(position);
@@ -39,8 +39,8 @@ export default class App extends React.Component {
             action.updateGeolocation(store.dispatch, position.coords);
         });
         console.log(JSON.stringify(this.state));
-        database.ref('/Syria').once("value").then((snapshot) => {
-           action.getFirebaseDB(store.dispatch, snapshot.val());
+        await database.ref('/Syria').once("value").then(async(snapshot) => {
+           await action.getFirebaseDB(store.dispatch, snapshot.val());
         });
     };
   render() {
@@ -49,8 +49,8 @@ export default class App extends React.Component {
           screen: HomeScreen,
           navigationOptions: {header : null},
         },
-        location: {
-          screen: LocationScreen,
+        alert: {
+          screen: AlertScreen,
           navigationOptions: {header : null},
         },
         health: {

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { database } from '../firebase/firebase';
 import Panel from '../components/Panel';
+import AlertBar2 from '../components/AlertBar2';
 
 class AlertScreen extends Component {
     constructor(props) {
@@ -17,18 +18,22 @@ class AlertScreen extends Component {
             });
         });
     };
+
   componentDidMount() {
   };
   render() {
-      console.log('nnsaknknkn',this.state.alerts);
     return(
       <View style={{ flex: 1 }}>
+        <AlertBar2 onPress={() => this.props.navigation.goBack()}/>
+        <View style={{ flex: 9, backgroundColor: '#d3d3d3'}}>
+        <ScrollView>
       {
           this.state.alerts &&
           Object.keys(this.state.alerts).map((alertId, index) => {
               const alertItem = this.state.alerts[alertId]
               return (
                 <Panel
+                  backgroundColor="red"
                   title={alertItem.title}
                   description={alertItem.description}
                   tier={alertItem.tier}
@@ -37,6 +42,8 @@ class AlertScreen extends Component {
                 )
             })
         }
+      </ScrollView>
+      </View>
       </View>
     )
 

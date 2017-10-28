@@ -16,9 +16,9 @@ class AlertBar2 extends Component {
         <View style={styles.leftStyle}>
           <Text style={styles.alertStyle}>ALERT</Text>
         </View>
-        <View style={styles.rightStyle}>
+        <TouchableOpacity style={styles.rightStyle} onPress={() => this.props.onPress2()}>
           <Text style={styles.info}>Expanded refugee vett...</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     )
   }

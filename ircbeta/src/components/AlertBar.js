@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 
 class AlertBar extends Component {
   render() {
@@ -8,9 +8,9 @@ class AlertBar extends Component {
         <View style={styles.leftStyle}>
           <Text style={styles.alertStyle}>ALERT</Text>
         </View>
-        <View style={styles.rightStyle}>
+        <TouchableOpacity style={styles.rightStyle} onPress={this.props.onPress2}>
           <Text style={styles.info}>Expanded refugee vetting could block innocent...</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     )
   }

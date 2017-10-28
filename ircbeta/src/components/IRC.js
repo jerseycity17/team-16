@@ -6,7 +6,7 @@ class IRC extends Component {
     return (
       <View style={styles.container2}>
         <View style={styles.rightStyle}>
-          <Text style={styles.info}>I.R.C</Text>
+          <Text style={styles.info}>I.R.C.</Text>
         </View>
       </View>
     )

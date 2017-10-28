@@ -5,7 +5,7 @@ class HealthHeader extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text1} >Health Information</Text>
+        <Text style={styles.text1}>Vaccines</Text>
       </View>
     )
   }
