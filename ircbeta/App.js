@@ -12,6 +12,7 @@ import {
   AlertScreen,
   PlaygroundScreen,
   LocationScreen,
+  CustomsScreen
 } from './src/screens'
 
 export default class App extends React.Component {
