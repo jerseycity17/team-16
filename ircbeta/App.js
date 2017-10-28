@@ -38,6 +38,9 @@ export default class App extends React.Component {
             action.updateGeolocation(store.dispatch, position.coords);
         });
         console.log(JSON.stringify(this.state));
+        database.ref('/Syria').once("value").then((snapshot) => {
+           action.getFirebaseDB(store.dispatch, snapshot.val());
+        });
     };
   render() {
     const MainNavigator = StackNavigator({
