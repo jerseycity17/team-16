@@ -6,14 +6,15 @@ import { StackNavigator } from 'react-navigation';
 
 import {
   AlertScreen,
-  PlaygroundScreen
+  PlaygroundScreen,
+  CustomsScreen
 } from './src/screens'
 
 export default class App extends React.Component {
   render() {
     const MainNavigator = StackNavigator({
         playground: {
-          screen: PlaygroundScreen,
+          screen: CustomsScreen,
           navigationOptions: {header : null},
         },
       }, {
