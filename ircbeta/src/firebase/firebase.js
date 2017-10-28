@@ -11,7 +11,6 @@ const config = {
 
 
 firebase.initializeApp(config);
-console.log(firebase)
 const database = firebase.database()
 
 // const mainref

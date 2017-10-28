@@ -7,7 +7,7 @@ import { Icon } from 'react-native-elements';
 
 class PlaygroundScreen extends Component {
   componentWillMount() {
-
+    
   }
 
   componentDidMount() {
