@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(mapStateToProps)(Contact);
+export default connect(mapStateToProps)(EmergencyContact);
