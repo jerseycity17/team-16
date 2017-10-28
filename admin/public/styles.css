@@ -72,6 +72,8 @@
 #alerts{
     background-color:lightyellow;
     text-align: center;
+    padding: 0;
+    list-style-type: none;
 
 }
 

@@ -6,7 +6,9 @@
     </head>
 <body>
 
+
 <div class="form">
+<h3>Alerts Submission</h3>
 <form action="/send" method="post" onsubmit="this.submit(); this.reset(); return false;">
   <input type="text" placeholder="Alert" name="title">
   <br>
@@ -16,6 +18,14 @@
   <br><br>
   <input type="submit" value="Submit">
 </form> 
+
+<h3>Check In Push</h3>
+
+<form action="/sendCheckIn" method="post" onsubmit="this.submit(); this.reset(); return false;">
+  <input type="text" placeHolder="Message" name="MSG">
+  <input type="submit" value="Submit">
+</form> 
+
 <form action="/logout" method="post">
     <input type="submit" value="Signout" >
 </form>
