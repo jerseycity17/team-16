@@ -4,8 +4,11 @@ const ProfileReducerState = {
 
 export default (state = ProfileReducerState, action) => {
   switch (action.type) {
-    case 'test1':
-      location: action.payload
+    case 'UPDATE_LOCATION':
+        return {
+            ...state,
+            location: action.payload,
+        };
     default:
       return state;
   }
