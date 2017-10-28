@@ -20,19 +20,23 @@ class AlertScreen extends Component {
   componentDidMount() {
   };
   render() {
+      console.log('nnsaknknkn',this.state.alerts);
     return(
       <View style={{ flex: 1 }}>
-      {this.state.alerts &&
-          this.state.alerts.map((alertItem, index) => {
-        return (
-            <Panel
-              title={alertItem.title}
-              description={alertItem.description}
-              tier={alertItem.tier}
-              key={index}
-            />
-        )
-      })}
+      {
+          this.state.alerts &&
+          Object.keys(this.state.alerts).map((alertId, index) => {
+              const alertItem = this.state.alerts[alertId]
+              return (
+                <Panel
+                  title={alertItem.title}
+                  description={alertItem.description}
+                  tier={alertItem.tier}
+                  key={index}
+                />
+                )
+            })
+        }
       </View>
     )
 
