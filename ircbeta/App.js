@@ -13,8 +13,12 @@ import {
   HomeScreen,
   PlaygroundScreen,
   LocationScreen,
-  CustomsScreen
+  CustomsScreen,
+  ContactScreen
 } from './src/screens'
+
+import FrontView from './src/screens/FrontView.js'
+import HealthView from './src/screens/HealthView.js'
 
 export default class App extends React.Component {
     componentDidMount() {
@@ -37,7 +41,7 @@ export default class App extends React.Component {
   render() {
     const MainNavigator = StackNavigator({
         home: {
-          screen: HomeScreen,
+          screen: ContactScreen,
           navigationOptions: {header : null},
         },
         location: {

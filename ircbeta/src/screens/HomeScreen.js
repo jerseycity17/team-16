@@ -4,15 +4,16 @@ import { database } from '../firebase/firebase'
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar'
 import { Icon } from 'react-native-elements';
+import AlertBar from '../components/AlertBar';
+import IRC from '../components/IRC'
 
 class HomeScreen extends Component {
   componentWillMount() {
-
   }
 
   componentDidMount() {
     // console.log(this.props)
-    // database.ref('/staff').once('value').then((snapshot) => {
+    // database.ref('/staff').once('value').th en((snapshot) => {
     //   console.log('firebase data ',snapshot)
     // })
   }
@@ -20,26 +21,26 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ flex: 1.5 , backgroundColor: 'black', justifyContent: 'center', alignItems: 'center'}}>
-          <Text style={styles.alertStyle}>Expanded refugee vetting could block innocent families</Text>
-        </View>
-        <View style={{ flex: 3, backgroundColor: 'white'}}/>
+        <AlertBar />
+        <IRC />
         <View style={{ flex: 10 }}>
           <View style={styles.upperBox}>
             <TouchableOpacity
               style={styles.box1}
               onPress={() => this.props.navigation.navigate('alert')}>
-                <Text style={styles.textStyle1}>You Are In</Text>
-                <Text style={styles.textStyle1}>Aleppo</Text>
+              <Image
+                source={require('../../assets/graphics/country.png')}
+                style={styles.planet}
+              />
                 <Text style={styles.textStyle1}>Syria</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.box2}
               onPress={() => this.props.navigation.navigate('alert')}>
               <Image
-                source={require('../../assets/graphics/emergency_icon.png')}
+                source={require('../../assets/graphics/alert.png')}
                 style={styles.emergency}
               />
-              <Text style={styles.textStyle1}>Emergency Contact</Text>
+              <Text style={styles.textStyle1}>Contacts</Text>
             </TouchableOpacity>
           </View>
 
@@ -48,13 +49,17 @@ class HomeScreen extends Component {
               <TouchableOpacity style={styles.box2}
                 onPress={() => this.props.navigation.navigate('alert')}>
               <Image
-                source={require('../../assets/graphics/emergency_icon.png')}
+                source={require('../../assets/graphics/health.png')}
                 style={styles.emergency}
               />
               <Text style={styles.textStyle1}>Health</Text>
               </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.box4} onPress={() => this.props.navigation.navigate('customs')}>
+              <Image
+                source={require('../../assets/graphics/chat.png')}
+                style={styles.emergency}
+              />
               <Text style={styles.textStyle1}>Local Customs</Text>
             </TouchableOpacity>
           </View>
@@ -99,6 +104,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   emergency: {
+    height: 100,
+    width: 100
+  },
+  planet: {
     height: 100,
     width: 100
   },

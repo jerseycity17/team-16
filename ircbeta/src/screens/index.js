@@ -4,3 +4,4 @@ export EmergencyContact from './EmergencyContactScreen';
 export HomeScreen from './HomeScreen';
 export PlaygroundScreen from './PlaygroundScreen';
 export LocationScreen from './LocationScreen';
+export ContactScreen from './ContactScreen';
