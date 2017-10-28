@@ -69,7 +69,7 @@ class Panel extends Component{
             style={[styles.container,{height: this.state.animation}]}>
             <View style={styles.container} >
                 <View style={styles.titleContainer} onLayout={this._setMinHeight.bind(this)}>
-                    <Text style={styles.title}>{this.state.title}</Text>
+                    <Text style={styles.title}>{this.props.title}</Text>
                     <TouchableHighlight 
                         style={styles.button} 
                         onPress={this.toggle.bind(this)}
@@ -82,7 +82,7 @@ class Panel extends Component{
                 </View>
                 
                 <View style={styles.body} onLayout={this._setMaxHeight.bind(this)} >
-                    {this.props.children}
+                    <Text>{this.props.description}</Text>
                 </View>
 
             </View>
