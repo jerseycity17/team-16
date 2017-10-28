@@ -39,7 +39,7 @@ export default class App extends React.Component {
         home: {
           screen: HomeScreen,
           navigationOptions: {header : null},
-        }
+        },
         location: {
           screen: LocationScreen,
           navigationOptions: {header : null},
