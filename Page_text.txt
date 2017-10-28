@@ -26,6 +26,13 @@ Food
 
 //Emergency Contact Page
 
+EMERGENCY CONTACTS
+
+For emergencies, call in the following order:
+
+In case of medical emergencies, call ISOS:
+
+Contact one of the following, in this order, immediately after ISOS
 
 //Health
 
@@ -35,3 +42,6 @@ Common Illnesses
 Weather Hazards
 
 //Location
+
+
+//Alert Page
