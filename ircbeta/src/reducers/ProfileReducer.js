@@ -3,9 +3,6 @@ import {database} from '../firebase/firebase';
 const ProfileReducerState = {
   location: 'default location',
 }
-database.ref('/Syria').once("value").then((snapshot) => {
-   ProfileReducerState.firebase = snapshot.val();
-});
 
 export default (state = ProfileReducerState, action) => {
   switch (action.type) {
@@ -23,6 +20,11 @@ export default (state = ProfileReducerState, action) => {
                 ...state.location,
                 country: action.payload,
             },
+        };
+    case 'FIREBASE_DB':
+        return {
+            ...state,
+            firebase: action.payload,
         };
     default:
       return state;
