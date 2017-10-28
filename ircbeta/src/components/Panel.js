@@ -95,6 +95,7 @@ var styles = StyleSheet.create({
     container   : {
         backgroundColor: '#fdc513',
         margin: 10,
+        borderRadius: 20,
         overflow:'hidden'
     },
     titleContainer : {
