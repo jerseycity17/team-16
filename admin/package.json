@@ -1,0 +1,16 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "\"Admin webserver\"",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "team16",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "firebase": "^4.6.0"
+  }
+}
