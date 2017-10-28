@@ -10,6 +10,7 @@ import action from './src/actions/';
 
 import {
   AlertScreen,
+  HomeScreen,
   PlaygroundScreen,
   LocationScreen,
   CustomsScreen
@@ -36,7 +37,7 @@ export default class App extends React.Component {
   render() {
     const MainNavigator = StackNavigator({
         playground: {
-          screen: LocationScreen,
+          screen: HomeScreen,
           navigationOptions: {header : null},
         },
         alert: {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { database } from '../firebase/firebase'
-import { database } from '../firebase/firebase';
 import Panel from '../components/Panel';
 import firebase from 'firebase'
 
@@ -46,7 +45,7 @@ class AlertScreen extends Component {
       {this.state.alerts.map((listObject) => {
         console.log(listObject)
         return (
-        <Panel 
+        <Panel
           title={listObject.title}
           description={listObject.description}
         />
@@ -54,7 +53,7 @@ class AlertScreen extends Component {
       })}
       </View>
     )
-      
+
   }
 }
 
