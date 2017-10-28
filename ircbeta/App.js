@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { StackNavigator } from 'react-navigation';
-// const whichCountry = require('which-country');
+// import { country } from 'which-country';
+const wc = require('which-country');
 
 import store from './src/store/configureStore';
 import action from './src/actions/';
@@ -19,6 +20,7 @@ export default class App extends React.Component {
             var initialPosition = JSON.stringify(position);
             console.log(position);
             action.updateGeolocation(store.dispatch, position.coords);
+            console.log(wc([position.coords.longitude, position.coords.latitude]))
         }, (error) => {
             alert(error.message);
         }, {

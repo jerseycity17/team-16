@@ -9,6 +9,15 @@ export default (state = ProfileReducerState, action) => {
             ...state,
             location: action.payload,
         };
+    case 'UPDATE_COUNTRY':
+        console.log(action);
+        return {
+            ...state,
+            location: {
+                ...state.location,
+                country: action.payload,
+            },
+        };
     default:
       return state;
   }
