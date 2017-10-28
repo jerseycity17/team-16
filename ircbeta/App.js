@@ -7,6 +7,7 @@ const wc = require('which-country');
 
 import store from './src/store/configureStore';
 import action from './src/actions/';
+import {database} from './firebase/firebase';
 
 import {
   AlertScreen,
