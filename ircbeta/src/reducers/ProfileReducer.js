@@ -30,7 +30,7 @@ export default (state = ProfileReducerState, action) => {
     case 'NEED_TO_CHECK_IN':
         return {
             ...state,
-            checkIn: true,
+            checkIn: action.payload,
         }
     default:
       return state;

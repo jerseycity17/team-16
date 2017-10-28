@@ -24,7 +24,6 @@ import HealthView from './src/screens/HealthView.js'
 
 const check_in = database.ref('/Syria/check_in');
 check_in.on('value', (snapshot) => {
-    console.log(snapshot.val());
     if (snapshot.val()) {
         action.needCheckIn(store.dispatch, snapshot.val());
     }
