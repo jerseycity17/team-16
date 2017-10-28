@@ -14,7 +14,7 @@ export default class App extends React.Component {
     const MainNavigator = StackNavigator({
         playground: {
           screen: PlaygroundScreen,
-          navigationOptions: {header : null}
+          navigationOptions: {header : null},
         },
       }, {
         lazy : true,
@@ -22,10 +22,10 @@ export default class App extends React.Component {
     )
 
     return (
-      <View style={styles.container}>
-        <Text>HELLO TEAM 16 - John Here</Text>
-      </View>
-    );
+      <Provider store={store}>
+        <MainNavigator />
+      </Provider>
+    )
   }
 }
 
