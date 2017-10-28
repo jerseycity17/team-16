@@ -44,7 +44,13 @@ app.get('/', (req, res) => {
 app.post('/send', async (req, res) => {
    alert = req.body;
    await database.ref('Syria/alerts/').push(alert);
-   console.log("AFTER ADDING TO DB");
+   res.sendFile(__dirname +'/public/home.html');
+});
+
+app.post('/sendCheckIn', async (req, res) => {
+   checkIn = req.body;
+   checkIn.needsCheckIn = true;
+   await database.ref('Syria/check_in').push(checkIn);
    res.sendFile(__dirname +'/public/home.html');
 });
 
@@ -83,13 +89,11 @@ app.post('/register', async function(req, res) {
 });
 
 app.get('/register', function (req, res){
-    console.log("inside get")
     res.sendFile(__dirname +'/public/register.html');
 });
 
 app.post('/logout', async function(req, res) {
     try {
-        console.log("text");
         //await firebase.auth().signOut();
     } catch (e) {
         res.status(500).json('Error on login');
@@ -135,9 +139,7 @@ database
         firstTime = false;
         return;
     }
-    console.log("New create of data");
      const alertList = snapshot.val();
-     console.log(alertList)
      const alertListKey = Object.keys(alertList);
      if (mostRecentIndex == alertListKey[alertListKey.length - 1]) {
          return;

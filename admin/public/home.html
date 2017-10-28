@@ -16,6 +16,14 @@
   <br><br>
   <input type="submit" value="Submit">
 </form> 
+
+<h3>Check in push</h3>
+
+<form action="/sendCheckIn" method="post" onsubmit="this.submit(); this.reset(); return false;">
+  <input type="text" placeHolder="Message" name="MSG">
+  <input type="submit" value="Submit">
+</form> 
+
 <form action="/logout" method="post">
     <input type="submit" value="Signout" >
 </form>
