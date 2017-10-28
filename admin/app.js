@@ -49,9 +49,9 @@ app.post('/send', async (req, res) => {
 
 app.post('/sendCheckIn', async (req, res) => {
    checkIn = req.body;
+   console.log(req.body);
    checkIn.needsCheckIn = true;
-   await database.ref('Syria/check_in').set({MSG : req.body.MSG});
-   await database.ref('Syria/check_in').set({needsCheckIn : true});
+   await database.ref('Syria/check_in').set({MSG : req.body.msg, needCheckIn : true});
    res.sendFile(__dirname +'/public/home.html');
 });
 

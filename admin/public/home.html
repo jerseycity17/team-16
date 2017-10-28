@@ -17,14 +17,14 @@
   <input type="text" placeHolder="Tier" name="tier">
   <br><br>
   <input type="submit" value="Submit">
-</form> 
+</form>
 
 <h3>Check In Push</h3>
 
 <form action="/sendCheckIn" method="post" onsubmit="this.submit(); this.reset(); return false;">
-  <input type="text" placeHolder="Message" name="msg">
+  <input type="text" placeHolder="Message" name="msg" id="msg">
   <input type="submit" value="Submit">
-</form> 
+</form>
 
 <form action="/logout" method="post">
     <input type="submit" value="Signout" >
@@ -33,7 +33,7 @@
 
     <Text> Alerts: </Text>
     <ul id="alerts" style="list-style: none">
-        
+
     </ul>
 
 </div>
@@ -57,6 +57,6 @@
         alerts.forEach(function(element) {
             $("#alerts").append($("<li>").append(element.title));
         }, this);
-        
+
     }
 </script>
