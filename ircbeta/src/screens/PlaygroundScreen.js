@@ -20,7 +20,10 @@ class PlaygroundScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ flex: 1, backgroundColor: 'black'}}/>
+        <View style={{ flex: 1.5 , backgroundColor: 'black', justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={styles.alertStyle}>Expanded refugee vetting could block innocent families</Text>
+        </View>
+        <View style={{ flex: 3, backgroundColor: 'white'}}/>
         <View style={{ flex: 10 }}>
           <View style={styles.upperBox}>
             <TouchableOpacity
@@ -45,6 +48,10 @@ class PlaygroundScreen extends Component {
             <View style={styles.box3}>
               <TouchableOpacity style={styles.box2}
                 onPress={() => this.props.navigation.navigate('alert')}>
+              <Image
+                source={require('../../assets/graphics/emergency_icon.png')}
+                style={styles.emergency}
+              />
               <Text style={styles.textStyle1}>Health</Text>
               </TouchableOpacity>
             </View>
@@ -78,34 +85,39 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row'
   },
+  alertStyle: {
+    color: 'white'
+  },
   box1: {
     flex: 1,
-    margin: 30,
-    backgroundColor: 'red',
+    backgroundColor: '#fdc513',
     justifyContent: 'center',
     alignItems: 'center',
   },
   textStyle1: {
-    fontSize: 24
+    fontSize: 24,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   emergency: {
-    height: 50,
-    width: 50
+    height: 100,
+    width: 100
   },
   box2: {
     flex: 1,
-    margin: 30,
-    backgroundColor: '#FFFF66',
+    backgroundColor: '#fdc513',
     justifyContent: 'center',
     alignItems: 'center'
   },
   box3: {
     flex: 1,
+    backgroundColor: '#fdc513',
     justifyContent: 'center',
     alignItems: 'center'
   },
   box4: {
     flex: 1,
+    backgroundColor: '#fdc513',
     justifyContent: 'center',
     alignItems: 'center'
   }
