@@ -1,6 +1,6 @@
 # WeRC
 ## Field Agent React Native App
-The App was built using React Native, a hybrid framework for iOS and Android that does is almost comparable in speed to native performance. We broke down the App to multiple screens, where nearly all screens have a navbar on the top for alerts.
+The App was built using React Native, a hybrid framework for iOS and Android that is almost comparable in speed to native performance. We broke down the App to multiple screens, where nearly all screens have a navbar on the top for alerts. Issues are bolded in paragraph and are referenced down below.
 
 NavBar
 - A black/red bar that appears on the top that displays the most recent alert (__Issue 1__), and when clicked on also redirects the user to the AlertScreen
@@ -44,6 +44,9 @@ EmeregencyContactScreen
 8. Add offline caching to AlertScreen
 9. Fix EmeregencyContactScreen on every screen
 10. Add a button that allows the user to tell an Admin he is not safe. This button also needs a method that sends a personal message to an admin (maybe through Twilio?).
+11. The app needs major refactoring in all if the files, and we should aim for component reusability with all of our components.
+12. We also currently have our database file as a value of a dictionary key. We should break up our Redux design by adding multiple reducers (possibly a reducer for each screen's respective data since they are mainly independent)
+
 
 ## Admin Panel
 ### Description
