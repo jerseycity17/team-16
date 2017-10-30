@@ -47,7 +47,7 @@ EmeregencyContactScreen
 
 ## Admin Panel
 ### Description
-This is the admin panel to submit alerts and push notifications to the database for the field agents to recieve. It is an express server with node.js connected to Firebase to push the alerts.
+This is the admin panel to submit alerts and push notifications to the database for the field agents to recieve. It is an express server with node.js connected to Firebase.
 
 ### How To Start
 1. Navigate to team-16/admin
