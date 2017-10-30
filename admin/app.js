@@ -162,7 +162,7 @@ database
              const staffList = snapshot.val();
              Object.keys(staffList).map(staffId => {
                  textMessage.to = staffList[staffId].phone_number;
-                //  return client.messages.create(textMessage);
+                 return client.messages.create(textMessage);
              });
          })
      .catch(err => console.log(err));
