@@ -1,5 +1,8 @@
+//Make express server
 const express = require("express");
 const bodyParser = require("body-parser");
+
+//Configure firebase
 const firebase = require("firebase");
 var config = firebase.initializeApp({
     apiKey: "AIzaSyBs7lc-PurV3_2rxna2SlPmGFEfC0p7-M0",
@@ -11,8 +14,11 @@ var config = firebase.initializeApp({
 });
 const database = firebase.database();
 const auth = firebase.auth();
+
+//Start up the express server
 const app = express();
 
+//Enable bodyParser for reading form data
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -22,8 +28,10 @@ app.use(bodyParser.json());
 app.use("/", express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public'));
 
+//On navigation to first URL
 app.get('/', (req, res) => {
 
+    //Check if they are logged in if so go to home else go login
     auth.onAuthStateChanged((user) => {
         if(user)
         {
@@ -40,13 +48,14 @@ app.get('/', (req, res) => {
 });
 
 
-
+//Push an alert to the databse
 app.post('/send', async (req, res) => {
    alert = req.body;
    await database.ref('Syria/alerts/').push(alert);
    res.sendFile(__dirname +'/public/home.html');
 });
 
+//Push a checkin to the database
 app.post('/sendCheckIn', async (req, res) => {
    checkIn = req.body;
    console.log(req.body);
@@ -55,16 +64,7 @@ app.post('/sendCheckIn', async (req, res) => {
    res.sendFile(__dirname +'/public/home.html');
 });
 
-/*var query = firebase.database().ref("users").orderByKey();
-query.once("value")
-  .then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      var key = childSnapshot.key; // "ada"
-
-      // Cancel enumeration
-      return true;
-  });
-});*/
+//Get all the alerts and display them
 app.get('/alerts', async (req, res) => {
     var alertsDatasnapshot = await database.ref("Syria/alerts").orderByKey().once("value");
     alerts = [];
