@@ -1,7 +1,9 @@
 # WeRC
 ## Field Agent React Native App
+### Description
 The App was built using React Native, a hybrid framework for iOS and Android that is almost comparable in speed to native performance. We broke down the App to multiple screens, where nearly all screens have a navbar on the top for alerts. Issues are bolded in paragraph and are referenced down below.
 
+### Screens/Components
 NavBar
 - A black/red bar that appears on the top that displays the most recent alert (__Issue 1__), and when clicked on also redirects the user to the AlertScreen
 - NavBar also contains functionality for navigating between screens.
